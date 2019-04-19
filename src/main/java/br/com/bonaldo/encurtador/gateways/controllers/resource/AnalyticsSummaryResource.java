@@ -14,5 +14,5 @@ import java.util.List;
 public class AnalyticsSummaryResource {
     private Long totalQuantityURLs;
     private Long totalClicksOnAllURLs;
-    private List<AnalyticsURLResource> topTenMostClicked;
+    private List<ShortenedURLResource> topTenMostClicked;
 }
