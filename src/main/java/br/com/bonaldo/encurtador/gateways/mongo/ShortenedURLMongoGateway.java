@@ -1,7 +1,7 @@
-package br.com.bonaldo.encurtador.gateway.mongo;
+package br.com.bonaldo.encurtador.gateways.mongo;
 
 import br.com.bonaldo.encurtador.domain.ShortenedURL;
-import br.com.bonaldo.encurtador.gateway.ShortenedURLGateway;
+import br.com.bonaldo.encurtador.gateways.ShortenedURLGateway;
 import br.com.bonaldo.encurtador.repository.ShortenedURLRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -20,7 +20,7 @@ public class ShortenedURLMongoGateway implements ShortenedURLGateway {
     }
 
     @Override
-    public Optional<ShortenedURL> findByShortCode(final String shortCode) {
-        return repository.findOneByShortCode(shortCode);
+    public Optional<ShortenedURL> findByCode(final String code) {
+        return repository.findById(code);
     }
 }

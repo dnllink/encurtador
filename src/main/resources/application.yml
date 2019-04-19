@@ -1,0 +1,2 @@
+application:
+  domain: http://localhost:${server.port}/

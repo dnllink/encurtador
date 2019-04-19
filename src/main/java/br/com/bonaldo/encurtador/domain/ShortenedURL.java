@@ -11,9 +11,17 @@ public class ShortenedURL {
 
     @Id
     private String id;
+    private String originalURL;
 
     @Indexed
-    private String shortCode;
+    private Long clickCounter;
 
-    private String originalURL;
+    public ShortenedURL(final String originalURL) {
+        this.originalURL = originalURL;
+        this.clickCounter = 0L;
+    }
+
+    public void countOneClick() {
+        this.clickCounter++;
+    }
 }
