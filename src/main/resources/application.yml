@@ -1,2 +1,7 @@
 application:
   domain: http://localhost:${server.port}/
+
+spring:
+  data:
+    mongodb:
+      uri: ${mongo.uri}
