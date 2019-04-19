@@ -24,7 +24,7 @@ public class RedirectController {
     @GetMapping("{code}")
     public ResponseEntity redirectToOriginalURL(@PathVariable final String code) throws UrlNotFoundException {
 
-        final ShortenedURL shortenedURL = shortenedURLGateway.findByCode(code)
+        final ShortenedURL shortenedURL = shortenedURLGateway.findById(code)
                 .orElseThrow(() -> new UrlNotFoundException(NOT_FOUND_MESSAGE));
 
         shortenedURL.countOneClick();
