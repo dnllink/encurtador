@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "c23ddf3f-03ac-4985-9985-1b78ba7d988f",
+		"name": "Encurtador",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Short URL",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"originalURL\": \"http://springfox.github.io/springfox/docs/current/#q13\"\n}"
+				},
+				"url": {
+					"raw": "{{host}}v1/url",
+					"host": [
+						"{{host}}v1"
+					],
+					"path": [
+						"url"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Analytics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{host}}v1/analytics",
+					"host": [
+						"{{host}}v1"
+					],
+					"path": [
+						"analytics"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,4 +1,24 @@
-mongo:
-  image: mongo:4.0.9
-  ports:
-    - "27017:27017"
+version: '2.2'
+
+services:
+  mongo:
+    image: mongo:4.0.9
+    ports:
+      - "27017:27017"
+
+  encurtador:
+    image: encurtador:1.0
+    scale: 3
+    ports:
+      - "8080"
+    links:
+      - "mongo"
+
+  load-balancer:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - encurtador
+    ports:
+      - "8010:8010"
