@@ -30,7 +30,7 @@ A stack utilizada inclui Java 8, Spring Boot 2, MongoDB, Docker e NGinx.
 
 Passo a passo para execução, **partindo da premissa que o java, maven e docker já estão instalados e funcionando:**
 
-###Local(DEV):
+### Local(DEV):
 Execute os comandos:
 
 Subir o mongo:
@@ -45,7 +45,7 @@ mvn clean spring-boot:run
 
 A aplicação estará disponível em http://localhost:8080
 
-###Docker
+### Docker
 Também é possível criar a imagem da aplicação, para rodar a mesma através do docker, já em conjunto com o mongo e o balanceador de carga.
 
 Execute os comandos(na raiz do projeto):
