@@ -1,11 +1,15 @@
 package br.com.bonaldo.encurtador.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
+@EqualsAndHashCode
+@AllArgsConstructor
 @Document(collection = "urls")
 public class ShortenedURL {
 
