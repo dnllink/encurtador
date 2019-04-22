@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"originalURL\": \"http://springfox.github.io/springfox/docs/current/#q13\"\n}"
+					"raw": "{\n\t\"originalURL\": \"https://github.com/eugenp/tutorials/tree/master/spring-boot/src/test/java/com/baeldung\"\n}"
 				},
 				"url": {
 					"raw": "{{host}}v1/url",
@@ -36,8 +36,26 @@
 		{
 			"name": "Analytics",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "78df5a1c-3554-46af-9e70-beb19f6bd192",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": ""
@@ -49,6 +67,66 @@
 					],
 					"path": [
 						"analytics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OAuth Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "burls-client-secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "burls-client",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "bonaldo",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}oauth/token",
+					"host": [
+						"{{host}}oauth"
+					],
+					"path": [
+						"token"
 					]
 				}
 			},
